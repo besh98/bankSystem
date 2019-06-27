@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BankSystemService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51066/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51066/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51066/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BankSystemService" />
+      <xsd:import schemaLocation="http://localhost:51066/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Web.Security" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBankSystemService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCards" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCardsWithoutUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsWithoutUser" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCardsWithoutUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsWithoutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_AddCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCard" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_AddCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_AddNewCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCard" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_AddNewCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_CreateTransaktion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransaktion" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_CreateTransaktion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransaktionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_CreateFullTransaktion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFullTransaktion" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_CreateFullTransaktion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFullTransaktionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetSaldoByCardName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaldoByCardName" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetSaldoByCardName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaldoByCardNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetIdByCardName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdByCardName" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetIdByCardName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdByCardNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetTransaktionsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaktionsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetTransaktionsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaktionsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetTransaktionsByNrCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaktionsByNrCard" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetTransaktionsByNrCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaktionsByNrCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetExistingCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingCard" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetExistingCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCardsByAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBankSystemService_GetCardsByAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsByAdminResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBankSystemService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetData" message="tns:IBankSystemService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetDataResponse" message="tns:IBankSystemService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetDataUsingDataContract" message="tns:IBankSystemService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetDataUsingDataContractResponse" message="tns:IBankSystemService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetCards" message="tns:IBankSystemService_GetCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetCardsResponse" message="tns:IBankSystemService_GetCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsWithoutUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetCardsWithoutUser" message="tns:IBankSystemService_GetCardsWithoutUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetCardsWithoutUserResponse" message="tns:IBankSystemService_GetCardsWithoutUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/AddCard" message="tns:IBankSystemService_AddCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/AddCardResponse" message="tns:IBankSystemService_AddCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/AddNewCard" message="tns:IBankSystemService_AddNewCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/AddNewCardResponse" message="tns:IBankSystemService_AddNewCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaktion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/CreateTransaktion" message="tns:IBankSystemService_CreateTransaktion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/CreateTransaktionResponse" message="tns:IBankSystemService_CreateTransaktion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFullTransaktion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/CreateFullTransaktion" message="tns:IBankSystemService_CreateFullTransaktion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/CreateFullTransaktionResponse" message="tns:IBankSystemService_CreateFullTransaktion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaldoByCardName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetSaldoByCardName" message="tns:IBankSystemService_GetSaldoByCardName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetSaldoByCardNameResponse" message="tns:IBankSystemService_GetSaldoByCardName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdByCardName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetIdByCardName" message="tns:IBankSystemService_GetIdByCardName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetIdByCardNameResponse" message="tns:IBankSystemService_GetIdByCardName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaktionsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetTransaktionsByUserId" message="tns:IBankSystemService_GetTransaktionsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetTransaktionsByUserIdResponse" message="tns:IBankSystemService_GetTransaktionsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaktionsByNrCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetTransaktionsByNrCard" message="tns:IBankSystemService_GetTransaktionsByNrCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetTransaktionsByNrCardResponse" message="tns:IBankSystemService_GetTransaktionsByNrCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetExistingCard" message="tns:IBankSystemService_GetExistingCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetExistingCardResponse" message="tns:IBankSystemService_GetExistingCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsByAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankSystemService/GetCardsByAdmin" message="tns:IBankSystemService_GetCardsByAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankSystemService/GetCardsByAdminResponse" message="tns:IBankSystemService_GetCardsByAdmin_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBankSystemService" type="tns:IBankSystemService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCards">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsWithoutUser">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetCardsWithoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCard">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/AddCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCard">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/AddNewCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaktion">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/CreateTransaktion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFullTransaktion">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/CreateFullTransaktion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaldoByCardName">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetSaldoByCardName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdByCardName">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetIdByCardName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaktionsByUserId">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetTransaktionsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaktionsByNrCard">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetTransaktionsByNrCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingCard">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetExistingCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsByAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBankSystemService/GetCardsByAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BankSystemService">
+    <wsdl:port name="BasicHttpBinding_IBankSystemService" binding="tns:BasicHttpBinding_IBankSystemService">
+      <soap:address location="http://localhost:51066/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

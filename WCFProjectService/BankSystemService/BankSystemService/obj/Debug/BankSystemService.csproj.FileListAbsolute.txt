@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\BankSystemService.dll.config
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\BankSystemService.dll
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\BankSystemService.pdb
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\EntityFramework.dll
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\EntityFramework.xml
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\obj\Debug\BankSystemService.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\obj\Debug\BankSystemService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\obj\Debug\BankSystemService.csproj.CopyComplete
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\obj\Debug\BankSystemService.dll
+C:\Users\User\Desktop\Project\WCFProjectService\BankSystemService\BankSystemService\obj\Debug\BankSystemService.pdb

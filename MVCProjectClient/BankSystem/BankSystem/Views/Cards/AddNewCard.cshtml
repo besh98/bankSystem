@@ -1,0 +1,40 @@
+﻿@model BankSystem.Models.AddNewCardModel
+
+@{
+    ViewBag.Title = "Add new card";
+}
+
+<h2>@ViewBag.Title.</h2>
+@using (Html.BeginForm("AddNewCard", "Cards", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Add new card.</h4>
+    <hr />
+    @Html.ValidationSummary(true, "Card was not added")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nr_card, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nr_card, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nr_card)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Srodki, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Srodki, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Srodki)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Saldo, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Saldo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Saldo)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add card" class="btn btn-default" />
+        </div>
+    </div>
+}

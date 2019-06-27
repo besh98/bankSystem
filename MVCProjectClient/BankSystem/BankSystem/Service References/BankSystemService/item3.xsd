@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BankSystemService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BankSystemService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfCardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardsView" nillable="true" type="tns:CardsView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCardsView" nillable="true" type="tns:ArrayOfCardsView" />
+  <xs:complexType name="CardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Available" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardsView" nillable="true" type="tns:CardsView" />
+  <xs:complexType name="ArrayOfTransactionsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionsView" nillable="true" type="tns:TransactionsView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionsView" nillable="true" type="tns:ArrayOfTransactionsView" />
+  <xs:complexType name="TransactionsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionsView" nillable="true" type="tns:TransactionsView" />
+  <xs:complexType name="ArrayOfTransactionsUsersCardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionsUsersCardsView" nillable="true" type="tns:TransactionsUsersCardsView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionsUsersCardsView" nillable="true" type="tns:ArrayOfTransactionsUsersCardsView" />
+  <xs:complexType name="TransactionsUsersCardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardAvailable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionsUsersCardsView" nillable="true" type="tns:TransactionsUsersCardsView" />
+  <xs:complexType name="ArrayOfUserCardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserCardsView" nillable="true" type="tns:UserCardsView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserCardsView" nillable="true" type="tns:ArrayOfUserCardsView" />
+  <xs:complexType name="UserCardsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Available" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" name="CardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserCardsView" nillable="true" type="tns:UserCardsView" />
+</xs:schema>

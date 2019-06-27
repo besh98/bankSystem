@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0260217b3c824b6db06b288838aa3c05" Name="Diagram1" ZoomLevel="62" >
+        <EntityTypeShape EntityType="BankSystemModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="BankSystemModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="BankSystemModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="BankSystemModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="BankSystemModel.AspNetUser" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="BankSystemModel.Card" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BankSystemModel.sysdiagram" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BankSystemModel.Transaction" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="BankSystemModel.CardsView" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BankSystemModel.TransactionsUsersCardsView" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BankSystemModel.TransactionsView" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BankSystemModel.UserCardsView" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BankSystemModel.UsersView" Width="1.5" PointX="9.75" PointY="0.75" />
+        <AssociationConnector Association="BankSystemModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
+        <AssociationConnector Association="BankSystemModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="BankSystemModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

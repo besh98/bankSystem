@@ -1,0 +1,33 @@
+﻿@model List<BankSystem.Models.CardsAdminResult>
+
+@{
+    ViewBag.Title = "Cards of user";
+}
+
+<h2>@ViewBag.Title.</h2>
+<table style="width:100%" class="chtable2">
+    <tr>
+        <th>Numer karty</th>
+        <th>Dostępne środki</th>
+        <th>Saldo</th>
+        <th>Nazwa</th>
+        <th>Użytkownik</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+    </tr>
+    @foreach (var result in Model)
+    {
+        <tr>
+            <td>@result.CardNumber</td>
+            <td>@result.Available PLN</td>
+            <td>@result.Balance PLN</td>
+            <td>
+                @Html.ActionLink(result.Name, "Historia", new { Nr = result.CardNumber })
+            </td>
+            <td>@result.UserName</td>
+            <td>@result.FirstName</td>
+            <td>@result.LastName</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Add new card", "AddNewCard", "Cards")

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BankSystemEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BankSystemModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BankSystemModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="C__MigrationHistory" EntityType="BankSystemModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="BankSystemModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="BankSystemModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="BankSystemModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="BankSystemModel.AspNetUser" />
+    <EntitySet Name="Cards" EntityType="BankSystemModel.Card" />
+    <EntitySet Name="sysdiagrams" EntityType="BankSystemModel.sysdiagram" />
+    <EntitySet Name="Transactions" EntityType="BankSystemModel.Transaction" />
+    <EntitySet Name="CardsViews" EntityType="BankSystemModel.CardsView" />
+    <EntitySet Name="TransactionsUsersCardsViews" EntityType="BankSystemModel.TransactionsUsersCardsView" />
+    <EntitySet Name="TransactionsViews" EntityType="BankSystemModel.TransactionsView" />
+    <EntitySet Name="UserCardsViews" EntityType="BankSystemModel.UserCardsView" />
+    <EntitySet Name="UsersViews" EntityType="BankSystemModel.UsersView" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="BankSystemModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="BankSystemModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="BankSystemModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="BankSystemModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="BankSystemModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="BankSystemModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="BankSystemModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="BankSystemModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="AspNetRoles" Relationship="BankSystemModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+  </EntityType>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNumber" Type="Int64" Nullable="false" />
+    <Property Name="Available" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CardsView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CardNumber" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNumber" Type="Int64" Nullable="false" />
+    <Property Name="Available" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TransactionsUsersCardsView">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="CardId" />
+      <PropertyRef Name="CardNumber" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionAmount" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionBalance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardId" Type="Int32" Nullable="false" />
+    <Property Name="CardNumber" Type="Int64" Nullable="false" />
+    <Property Name="CardAvailable" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CardBalance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CardName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TransactionsView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserCardsView">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="CardId" />
+      <PropertyRef Name="CardNumber" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardId" Type="Int32" Nullable="false" />
+    <Property Name="CardNumber" Type="Int64" Nullable="false" />
+    <Property Name="Available" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CardName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UsersView">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Type="BankSystemModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BankSystemModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="BankSystemModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BankSystemModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="BankSystemModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="BankSystemModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+</Schema>

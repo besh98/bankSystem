@@ -1,0 +1,25 @@
+﻿@model List<BankSystem.Models.HistoriaResult>
+
+@{
+    ViewBag.Title = "Historia";
+}
+
+<h2>@ViewBag.Title.</h2>
+<table style="width:100%" class = "chtable2">
+    <tr>
+        <th>Data</th>
+        <th>Tytul</th>
+        <th>Kwota</th>
+        <th>Saldo</th>
+    </tr>
+
+    @foreach (var result in Model)
+    {
+        <tr>
+            <td> @result.Date </td>
+            <td> @result.Title </td>
+            <td> @result.Amount PLN </td>
+            <td> @result.Balance PLN </td>
+        </tr>
+    }
+ </table>

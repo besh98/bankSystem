@@ -1,0 +1,72 @@
+﻿@model BankSystem.Models.DoladowanieModel
+
+@{
+    ViewBag.Title = "Doladuj konto";
+}
+
+<h2>@ViewBag.Title.</h2>
+@using (Html.BeginForm("Doladowania", "Cards", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Wykorzystaj daną formę do doladowania konta.</h4>
+    <hr />
+    @Html.ValidationSummary(true, "Konto nie zostało doladowane")
+    <div>
+        <fieldset>
+            <legend>Doladowanie</legend>
+
+            @*{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+                    
+                var data = ViewData["Cards"] as System.Data.DataTable;
+                    
+                foreach (System.Data.DataRow row in data.Rows)
+                {
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = row["Name"].ToString(),
+                        Value = row["Name"].ToString()
+                    });
+                }
+            }*@
+            @{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+
+                foreach (var row in ViewBag.Cards)
+                {
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = row.Name,
+                        Value = row.Name
+                    });
+                }
+            }
+            <div class="form-group">
+                @Html.LabelFor(m => m.SelectedCardName)
+                <div class="col-md-12">
+                    @Html.DropDownListFor(m => m.SelectedCardName, listItems, "wybierz rachunek")
+                    @Html.ValidationMessageFor(m => m.SelectedCardName)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Numer, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Numer, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Numer)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Kwota, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Kwota, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Kwota)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Doladuj" class="btn btn-default" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+}
